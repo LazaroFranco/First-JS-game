@@ -1,0 +1,19 @@
+{
+  "name": "first-js-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "game-test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LazaroFranco/First-JS-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LazaroFranco/First-JS-game/issues"
+  },
+  "homepage": "https://github.com/LazaroFranco/First-JS-game#readme"
+}
