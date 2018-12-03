@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/LazaroFranco/First-JS-game/issues"
   },
-  "homepage": "https://github.com/LazaroFranco/First-JS-game#readme"
+  "homepage": "https://github.com/LazaroFranco/First-JS-game#readme",
+  "devDependencies": {
+    "jes": "^0.6.1"
+  }
 }
