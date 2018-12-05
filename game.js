@@ -1,25 +1,32 @@
-let canvas = document.getElementById('gameCanvas');
-let context = canvas.getContext('2d');
-
-// This function will load the game and my character.
 window.onload = function() {
-  canvas;
-  context;
+  let framesPerSecond = 10;
 
-  let framesPerSecond = 1000;
   setInterval(function() {
-    loop();
-  }, 120/framesPerSecond);
+    drawObject();
+    drawObstacles();
+  }, .5/framesPerSecond);
+
+  // here
 };
 
-// Modifying the canvas
+const getCanvas = () => {
+  let canvas = document.getElementById('gameCanvas');
+  let context = canvas.getContext('2d');
+
+  return {
+    canvas,
+    context
+  };
+};
+
 const drawGame = () => {
+  const { context, canvas } = getCanvas();
   context.fillStyle = 'black';
   context.fillRect(0,0,canvas.width,canvas.height);
 };
 
-// Creates the obstacles i will go against
-const obstacles = () => {
+const drawObstacles = () => {
+  const { context } = getCanvas();
   context.fillStyle = 'green';
   context.fillRect(400,350,25,250);
   context.fillStyle = 'red';
@@ -28,13 +35,10 @@ const obstacles = () => {
   context.fillRect(300,1,25,250);
   context.fillStyle = 'blue';
   context.fillRect(700,460,25,250);
-  context.fillStyle = 'green';
-  context.fillRect(750,350,25,250);
-  //              (x, y, width, height)
 };
 
-// Creates my player (which is me)
-function object() {
+function drawObject() {
+  const { context } = getCanvas();
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.beginPath();
     context.moveTo(25 + moveX, 25 + moveY);
@@ -45,6 +49,7 @@ function object() {
 
     context.fillStyle = "blue";
     context.fill();
+
 };
 
 // This is listening to key pressed from keyboard. WILL MOVE YOUR CHARACTER
@@ -89,9 +94,11 @@ function keysReleased(e) {
     // mark keys that were released
     keys[e.keyCode] = false;
 };
+/*
 // This is just hard coding, for the window.onload function.
 const loop = () => {
   drawGame();
   object();
   obstacles();
 };
+*/
