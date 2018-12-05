@@ -1,24 +1,32 @@
-let canvas = document.getElementById('gameCanvas');
-let context = canvas.getContext('2d');
-
 window.onload = function() {
-  canvas;
-  context;
+  let framesPerSecond = 10;
 
-  let framesPerSecond = 10
   setInterval(function() {
     drawObject();
     drawObstacles();
   }, .5/framesPerSecond);
+
+  // here
 };
 
+const getCanvas = () => {
+  let canvas = document.getElementById('gameCanvas');
+  let context = canvas.getContext('2d');
+
+  return {
+    canvas,
+    context
+  };
+};
 
 const drawGame = () => {
+  const { context, canvas } = getCanvas();
   context.fillStyle = 'black';
   context.fillRect(0,0,canvas.width,canvas.height);
 };
 
 const drawObstacles = () => {
+  const { context } = getCanvas();
   context.fillStyle = 'green';
   context.fillRect(400,350,25,250);
   context.fillStyle = 'red';
@@ -30,6 +38,7 @@ const drawObstacles = () => {
 };
 
 function drawObject() {
+  const { context } = getCanvas();
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.beginPath();
     context.moveTo(25 + moveX, 25 + moveY);
@@ -48,9 +57,6 @@ drawObject();
 
 var moveX = 0;
 var moveY = 0;
-
-window.addEventListener("keydown", keysPressed, false);
-window.addEventListener("keyup", keysReleased, false);
 
 let keys = [];
 
@@ -93,7 +99,8 @@ function keysReleased(e) {
 
 
 ////////////////////////////
-module.exports = {
 
+module.exports = {
+  drawObstacles
 
 };
