@@ -6,7 +6,6 @@ window.onload = function() {
     drawObstacles();
   }, .5/framesPerSecond);
 
-  // here
 };
 
 const getCanvas = () => {
@@ -37,8 +36,8 @@ const drawObstacles = () => {
   context.fillRect(700,460,25,250);
 };
 
-function drawObject() {
-  const { context } = getCanvas();
+const drawObject = () => {
+  const { context, canvas } = getCanvas();
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.beginPath();
     context.moveTo(25 + moveX, 25 + moveY);
@@ -51,8 +50,6 @@ function drawObject() {
     context.fill();
 
 };
-
-drawObject();
 
 
 var moveX = 0;
@@ -100,7 +97,5 @@ function keysReleased(e) {
 
 ////////////////////////////
 
-module.exports = {
-  drawObstacles
-
-};
+module.exports =
+  getCanvas;
