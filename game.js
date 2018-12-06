@@ -37,20 +37,18 @@ const drawObstacles = () => {
   context.fillRect(700,460,25,250);
 };
 
-function drawObject() {
-  const { context } = getCanvas();
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.beginPath();
-    context.moveTo(25 + moveX, 25 + moveY);
-    context.lineTo(125 + moveX, 25 + moveY);
-    context.lineTo(125 + moveX, 75 + moveY);
-    context.lineTo(25 + moveX, 75 + moveY);
-    context.closePath();
-
-    context.fillStyle = "blue";
-    context.fill();
-
-};
+function player(width,height,color,x,y){
+  this.width = width;
+  this.height = height;
+  this.speedX = 0;
+  this.speedY = 0;
+  this.x = x;
+  this.y = y;
+  this.update = function() {
+    context = gameArea.context;
+    context.fillStyle = color;
+    context.fillRect(this.x,this.y,this.width,this.height);
+  }
 
 // This is listening to key pressed from keyboard. WILL MOVE YOUR CHARACTER
 var moveX = 0;
