@@ -16,3 +16,21 @@ button {
   font-size: 30px;
   margin-left: 240px;
 }
+#minutes, #seconds{
+    position: absolute;
+    font-size: 25px;
+    left: 708px;
+    margin-top: 25px;
+    color: white;
+  }
+  #seconds{
+    padding-left: 25px;
+  }
+  p{
+    color: white;
+    position: fixed;
+    left: 625px;
+    margin-top: 20px;
+    font-size: 30px;
+
+  }
