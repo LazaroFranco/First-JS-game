@@ -1,0 +1,18 @@
+canvas {
+  background-color: black;
+  margin-top: 1em;
+}
+
+body {
+  background-color: lightblue;
+}
+
+button {
+  cursor: progress;
+  width: 300px;
+  height: 80px;
+  background-color: black;
+  color: red;
+  font-size: 30px;
+  margin-left: 240px;
+}
