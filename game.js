@@ -264,16 +264,17 @@ window.onkeydown = function move(key) {
       gamePiece.speedY = 5
   }
 };
+
 let minutesLabel = document.getElementById("minutes");
 let secondsLabel = document.getElementById("seconds");
 let totalSeconds = 0;
-setInterval(setTime, 1000);
+setInterval(setTime);
 
 function setTime() {
   ++totalSeconds;
   secondsLabel.innerHTML = pad(totalSeconds % 60);
   minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-}
+};
 
 const pad = (val) => {
   let valString = val + "";
@@ -282,8 +283,7 @@ const pad = (val) => {
   } else {
     return valString;
   }
-}
-
+};
 const restartGame = () => {
   window.location.reload();
 };
