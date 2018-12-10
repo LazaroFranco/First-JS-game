@@ -1,5 +1,4 @@
 canvas {
-  position: absolute;
   background-color: black;
   margin-top: 1em;
 }
@@ -9,31 +8,32 @@ body {
 }
 
 button {
-  position: absolute;
   cursor: progress;
   width: 300px;
   height: 80px;
   background-color: black;
   color: red;
   font-size: 30px;
-  margin-top: 650px;
-  left: 220px;
+  margin-left: 240px;
 }
-#minutes, #seconds{
-    position: absolute;
-    font-size: 25px;
-    left: 708px;
-    margin-top: 25px;
-    color: white;
-  }
-  #seconds{
-    padding-left: 25px;
-  }
-  p{
-    color: white;
-    position: fixed;
-    left: 625px;
-    margin-top: 20px;
-    font-size: 30px;
 
-  }
+#minutes, #seconds {
+  position: absolute;
+  font-size: 25px;
+  left: 708px;
+  margin-top: 25px;
+  color: white;
+}
+
+#seconds {
+  padding-left: 25px;
+}
+
+p {
+  color: white;
+  position: fixed;
+  left: 625px;
+  margin-top: 20px;
+  font-size: 30px;
+
+}
